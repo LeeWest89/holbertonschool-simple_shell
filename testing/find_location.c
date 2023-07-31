@@ -6,7 +6,7 @@ char *find_location(char *command)
 	int command_length, directory_length;
 	struct stat buffer;
 
-	path = getenv("PATH");
+	path = _getenv("PATH");
 
 	if (path)
 	{
@@ -14,11 +14,11 @@ char *find_location(char *command)
 		command_length = strlen(command);
 		path_token = strtok(path_copy, ":");
 
-		while(path_token != NULL)
+		while (path_token != NULL)
 		{
 			directory_length = strlen(path_token);
 			file_path = malloc(command_length + directory_length + 2);
-			
+
 			strcpy(file_path, path_token);
 			strcat(file_path, "/");
 			strcat(file_path, command);
@@ -35,12 +35,10 @@ char *find_location(char *command)
 				path_token = strtok(NULL, ":");
 			}
 		}
-		free(path_copy);
+		if (stat(command, &buffer) == 0)
+			return (command);
 
-		 if (stat(command, &buffer) == 0)
-			 return (command);
-
-		 return (NULL);
+		return (NULL);
 	}
 	return (NULL);
 

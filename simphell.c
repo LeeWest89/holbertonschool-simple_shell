@@ -3,12 +3,12 @@
 int main(int argc, char **argv)
 {
 	char *prompt = "(simphell) $ ";
-	char *input, *input_copy,*token;
+	char *input = NULL, *input_copy = NULL, *token;
 	const char *delim = " \n";
 	int i, token_count = 0;
 	size_t n = 0;
 	ssize_t c_read;
-	(void)argc; (void)argv;
+	(void)argc;
 
 	while (1)
 	{
@@ -43,10 +43,12 @@ int main(int argc, char **argv)
 		{
 			argv[i] = malloc(sizeof(char) * strlen(token));
 			strcpy(argv[i], token);
-			printf(">> %s \n", argv[i]);
-			token = strtok(NULL,delim);
+			/*printf(">> %s \n", argv[i]);*/
+			token = strtok(NULL, delim);
 		}
 		argv[i] = NULL;
+
+		execmd(argv);
 
 		/*printf("%s", input);*/
 		free(argv);
