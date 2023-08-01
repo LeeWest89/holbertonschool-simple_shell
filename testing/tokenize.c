@@ -10,6 +10,7 @@ char **tokenize(char *input, const char *delim)
 	c_read = getline(&input, &n, stdin);
 	if (c_read == -1)
 	{
+		free(input);
 		printf("Exiting Simphell\n");
 		exit(-1);
 	}
