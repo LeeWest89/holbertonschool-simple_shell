@@ -15,20 +15,30 @@ int main(int argc, char **argv)
 		if (token_argv[0] != NULL && strcmp(token_argv[0], "exit") == 0)
 		{
 			printf("Exiting Simphell\n");
-			free(token_argv);
+			free_arg(token_argv);
 			break;
 		}
 		else if (token_argv[0] != NULL && strcmp(token_argv[0], "env") == 0)
 		{
 			env_cmd();
-			free(token_argv);
+			free_arg(token_argv);
 			continue;
 		}
 		
 		execmd(token_argv);
 
-		free(token_argv);
+		free_arg(token_argv);
 	}
 	free(input);
 	return (0);
+}
+
+void free_arg(char **argv)
+{
+	int i;
+
+	for (i = 0; argv[i]; i++)
+		free(argv[i]);
+
+	free(argv);
 }

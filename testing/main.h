@@ -17,6 +17,7 @@ extern char **environ;
 
 
 int main(int argc, char **argv);
+void free_arg(char **argv);
 char *_getenv(const char *command);
 void execmd(char **argv);
 char *find_location(char *command);
