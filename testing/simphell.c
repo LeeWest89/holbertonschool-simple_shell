@@ -19,10 +19,14 @@ int main(int argc, char **argv)
 			free(token_argv);
 			break;
 		}
+		else if (token_argv[0] != NULL && strcmp(token_argv[0], "env") == 0)
+		{
+			env_cmd();
+			free(token_argv);
+			continue;
+		}
 
-		
 		pid = fork();
-
 		if (pid < 0)
 		{
 			perror("Wrong");
