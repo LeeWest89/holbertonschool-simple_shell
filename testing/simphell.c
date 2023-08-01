@@ -5,7 +5,6 @@ int main(int argc, char **argv)
 	char *prompt = "simphell: ";
 	char *input = NULL, **token_argv;
 	const char *delim = " \n";
-	int pid;
 	(void)argc;
 	(void)argv;
 
@@ -25,18 +24,8 @@ int main(int argc, char **argv)
 			free(token_argv);
 			continue;
 		}
-
-		pid = fork();
-		if (pid < 0)
-		{
-			perror("Wrong");
-			return (-1);
-		}
-
-		else if (pid == 0)
-			execmd(token_argv);
-		else
-			wait(NULL);
+		
+		execmd(token_argv);
 
 		free(token_argv);
 	}
