@@ -21,7 +21,7 @@ char **tokenize(char *input, const char *delim)
 		exit(-1);
 	}
 
-	strcpy(input_copy, input);
+	strcpy(input_copy, input + 1);
 	token = strtok(input_copy, delim);
 	while (token != NULL)
 	{
