@@ -33,7 +33,7 @@ char **tokenize(char *input, const char *delim)
 	token = strtok(input, delim);
 	for (i = 0; token != NULL; i++)
 	{
-		argv[i] = malloc(sizeof(char) * strlen(token));
+		argv[i] = malloc(sizeof(char) * (strlen(token) + 1));
 		strcpy(argv[i], token);
 		token = strtok(NULL, delim);
 	}

@@ -13,8 +13,6 @@ int main(int argc, char **argv)
 	{
 		printf("%s", prompt);
 		token_argv = tokenize(input, delim);
-		pid = fork();
-
 		if (token_argv[0] != NULL && strcmp(token_argv[0], "exit") == 0)
 		{
 			printf("Exiting Simphell\n");
@@ -22,16 +20,20 @@ int main(int argc, char **argv)
 			break;
 		}
 
-		if (pid != 0)
-			wait(NULL);
+		
+		pid = fork();
 
-		else if (pid == 0)
-			execmd(token_argv);
-		else
+		if (pid < 0)
 		{
 			perror("Wrong");
 			return (-1);
 		}
+
+		else if (pid == 0)
+			execmd(token_argv);
+		else
+			wait(NULL);
+
 		free(token_argv);
 	}
 	free(input);
