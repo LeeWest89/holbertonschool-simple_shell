@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * _getenv - Finds the PATH for the environ
+ * @name: Command to searched for
+ * Return: Returns PATH on success or NULL on fail
+ */
+
 char *_getenv(const char *name)
 {
 	size_t i, nl;
