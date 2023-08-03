@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * main - entrty to function
+ * @argc: Number of Arguments
+ * @argv: Array of arguments
+ * Return: Always returns 0
+ */
+
 int main(int argc, char **argv)
 {
 	char *prompt = "simphell: ";
@@ -32,6 +39,11 @@ int main(int argc, char **argv)
 	free(input);
 	return (0);
 }
+
+/**
+ * free_arg - Function for freeing the array, argv
+ * @argv: Array to be freed
+ */
 
 void free_arg(char **argv)
 {
