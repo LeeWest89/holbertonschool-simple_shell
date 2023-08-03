@@ -1,6 +1,7 @@
 #include "main.h"
 
-/**tokenize - Function to create Tokens
+/**
+ * tokenize - Function to create Tokens
  * @input: input to be tokenized
  * @delim: delimiter to be used by strtok
  * Return: Array of tokens

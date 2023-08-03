@@ -4,7 +4,7 @@
  * print_env - prints the environment
  */
 
-void print_env()
+void print_env(void)
 {
 	size_t i;
 
@@ -16,7 +16,7 @@ void print_env()
  * env_cmd - prints the environment path
  */
 
-void env_cmd()
+void env_cmd(void)
 {
 	print_env();
 }

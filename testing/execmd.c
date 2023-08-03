@@ -21,7 +21,7 @@ void execmd(char **argv)
 			pid = fork();
 		if (pid < 0)
 			perror("Wrong");
-		
+
 		else if (pid == 0)
 		{
 			if (execve(real_command, argv, NULL) == -1)

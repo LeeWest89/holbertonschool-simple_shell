@@ -31,7 +31,6 @@ int main(int argc, char **argv)
 			free_arg(token_argv);
 			continue;
 		}
-		
 		execmd(token_argv);
 
 		free_arg(token_argv);
