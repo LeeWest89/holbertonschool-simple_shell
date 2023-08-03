@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**tokenize - Function to create Tokens
+ * @input: input to be tokenized
+ * @delim: delimiter to be used by strtok
+ * Return: Array of tokens
+ */
+
 char **tokenize(char *input, const char *delim)
 {
 	char **argv = NULL, *input_copy = NULL, *token;
@@ -20,7 +26,6 @@ char **tokenize(char *input, const char *delim)
 		perror("tsh: memory allocation error");
 		exit(-1);
 	}
-
 	strcpy(input_copy, input + 1);
 	token = strtok(input_copy, delim);
 	while (token != NULL)
@@ -29,7 +34,6 @@ char **tokenize(char *input, const char *delim)
 		token = strtok(NULL, delim);
 	}
 	token_count++;
-
 	argv = malloc(sizeof(char *) * token_count);
 	token = strtok(input, delim);
 	for (i = 0; token != NULL; i++)
