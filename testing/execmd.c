@@ -26,5 +26,7 @@ void execmd(char **argv)
 		else
 			wait(NULL);
 
+		free(real_command);
+
 	}
 }
