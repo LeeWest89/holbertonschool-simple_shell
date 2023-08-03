@@ -13,7 +13,16 @@
 #include <signal.h>
 #include <fcntl.h>
 
-int main(int ac, char **argv);
+extern char **environ;
+
+
+int main(int argc, char **argv);
+void free_arg(char **argv);
+char *_getenv(const char *command);
 void execmd(char **argv);
+char *find_location(char *command);
+char **tokenize(char *input, const char *delim);
+void print_env(void);
+void env_cmd(void);
 
 #endif
