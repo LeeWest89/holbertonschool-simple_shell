@@ -39,6 +39,7 @@ char **tokenize(char *input, const char *delim)
 		token = strtok(NULL, delim);
 	}
 	argv[i] = NULL;
+	free(input);
 	free(input_copy);
 	return (argv);
 }
