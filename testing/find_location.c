@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * find_location - finds the file path of a command
+ * @command: Command to be searched for
+ * Return: returns file path or NULL on Fail
+ */
+
 char *find_location(char *command)
 {
 	char *path, *path_copy, *path_token, *file_path;
