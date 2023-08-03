@@ -9,7 +9,7 @@
 
 int main(int argc, char **argv)
 {
-	char *prompt = "simphell: ";
+	/*char *prompt = "simphell: ";*/
 	char *input = NULL, **token_argv;
 	const char *delim = " \n";
 	(void)argc;
@@ -17,11 +17,11 @@ int main(int argc, char **argv)
 
 	while (1)
 	{
-		printf("%s", prompt);
+		/*printf("%s", prompt);*/
 		token_argv = tokenize(input, delim);
 		if (token_argv[0] != NULL && strcmp(token_argv[0], "exit") == 0)
 		{
-			printf("Exiting Simphell\n");
+			/*printf("Exiting Simphell\n");*/
 			free_arg(token_argv);
 			break;
 		}
