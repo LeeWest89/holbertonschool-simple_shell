@@ -19,13 +19,13 @@ char **tokenize(char *input, const char *delim)
 	{
 		free(input);
 		printf("Exiting Simphell\n");
-		exit(-1);
+		exit(0);
 	}
 	input_copy = malloc(sizeof(char) * c_read);
 	if (input_copy == NULL)
 	{
 		perror("tsh: memory allocation error");
-		exit(-1);
+		exit(0);
 	}
 	strcpy(input_copy, input + 1);
 	token = strtok(input_copy, delim);
