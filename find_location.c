@@ -43,9 +43,9 @@ char *find_location(char *command)
 		}
 		if (stat(command, &buffer) == 0)
 			return (command);
-
+		free(path_copy);
+		free(path_token);
 		return (NULL);
 	}
 	return (NULL);
-
 }

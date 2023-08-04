@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 		else if (token_argv[0] != NULL && strcmp(token_argv[0], "env") == 0)
 		{
 			env_cmd();
-			free_arg(token_argv);
+			/*free_arg(token_argv);*/
 			continue;
 		}
 		execmd(token_argv);
