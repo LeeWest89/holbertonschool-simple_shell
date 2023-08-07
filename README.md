@@ -51,7 +51,14 @@
 - write
 
 ##### Prototypes
-'size_t print_dlistint(const dlistint_t *h);'
+'int main(int argc, char **argv);'
+'void free_arg(char **argv);'
+'char *_getenv(const char *command);'
+'void execmd(char **argv);'
+'char *find_location(char *command);'
+'char **tokenize(char *input, const char *delim);'
+'void print_env(void);'
+'void env_cmd(void);'
 
 ##### Compilation
 `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh'
@@ -62,5 +69,20 @@
 |AUTHORS| File containing all Contributors to the Repo|
 |man_1_simple_shell|Man page for the simphell function|
 |main.h|Header file containing all structs and prototypes used|
-|simphell| File that creates a simple shell to execute inputs|
-|||
+|simphell.c| File that contains the main function for creating a shell and the free_args function to free variable arg|
+|tokenize.c|Reads the input and breaks it down into tokens|
+|print_env.c| Contains the function for printing the environment|
+|execmd.c| Contains the execmd function that forks the process and runs a command|
+|find_location.c| Contains the function for finding the environment path of a command and checking that the command exists|
+|_getenv| Finds the PATH variable from the environment|
+
+### Flow chart
+
+Testing
+
+#### Testing
+
+---
+graph TD;
+	Start-->Finish
+---
