@@ -14,8 +14,8 @@ char *_getenv(const char *name)
 	for (i = 0; environ[i] != NULL; i++)
 	{
 		espos = strchr(environ[i], '=');
-		if (espos == NULL || espos == environ[i])
-			continue;
+		/*if (espos == NULL || espos == environ[i])
+			continue;*/
 
 		nl = espos - environ[i];
 		if (strncmp(environ[i], name, nl) == 0)
