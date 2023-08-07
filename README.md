@@ -81,7 +81,7 @@
 #### Simphell
 
 ```mermaid
-graph TD;
+Flowchart TD;
 	Simphell starts-->Is it interactive?;
 	Simphell starts-->Is it non-interavtive?;
 	Is it non-interactive?-->Yes, Is the command "exit"?;
