@@ -82,18 +82,17 @@
 
 ```mermaid
 Flowchart TD;
-	Simphell starts-->Is it interactive?;
-	Simphell starts-->Is it non-interavtive?;
-	Is it non-interactive?-->Yes, Is the command "exit"?;
-	Yes, Is the command "exit"?-->Yes, Call free_arg and break.;
-	Yes, Is the command "exit"?-->No, is the command "env"?;
-	No, is the command "env"?--> Yes, Call env_cmd and continue.;
-	No, is the command "env"?--> No, Call execmd and free_arg.;
-	Is it interactive?-->Yes, make the prompt and call tokenize.;
-	Yes, make the prompt and call tokenize.-->Is the command "ex
-it"?;
-	Is the command "exit"?--> No, is the command "env"?;
-	Is the command "exit"?-->Yes, Call free_arg and break.;
-	No, is the command "env"?--> Yes, Call env_cmd and continue.;
-	No, is the command "env"?--> No, Call execmd and free_arg.;
+	A[Simphell Starts]-->B[Is it interactive?];
+	A-->C[Is it non-interavtive?];
+	C--Yes-->D[Is the command "exit"?];
+	D--Yes-->E[Call free_arg and break.];
+	D--No-->F[Is the command "env"];
+	F--Yes-->G[Call env_cmd and continue.];
+	F--No-->H[execmd and free_arg.];
+	B--Yes-->I[make the prompt and call tokenize.];
+	I-->D;
+	D--Yes-->E;
+	D--No-->F;
+	F--Yes-->G;
+	F--No-->H;
 ```
