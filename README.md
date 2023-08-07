@@ -76,26 +76,24 @@
 |find_location.c| Contains the function for finding the environment path of a command and checking that the command exists|
 |_getenv| Finds the PATH variable from the environment|
 
-### Flow chart
+### Flow charts
 
-Testing
-
-#### Testing
+#### Simphell
 
 ```mermaid
 graph TD;
-	Simphell starts-->Is it interactive?
-	Simphell starts-->Is it non-interavtive?
-	Is it non-interactive?-->Yes, Is the command "exit"?
-	Yes, Is the command "exit"?-->Yes, Call free_arg and break.
-	Yes, Is the command "exit"?-->No, is the command "env"?
-	No, is the command "env"?--> Yes, Call env_cmd and continue.
-	No, is the command "env"?--> No, Call execmd and free_arg.
-	Is it interactive?-->Yes, make the prompt and call tokenize.
+	Simphell starts-->Is it interactive?;
+	Simphell starts-->Is it non-interavtive?;
+	Is it non-interactive?-->Yes, Is the command "exit"?;
+	Yes, Is the command "exit"?-->Yes, Call free_arg and break.;
+	Yes, Is the command "exit"?-->No, is the command "env"?;
+	No, is the command "env"?--> Yes, Call env_cmd and continue.;
+	No, is the command "env"?--> No, Call execmd and free_arg.;
+	Is it interactive?-->Yes, make the prompt and call tokenize.;
 	Yes, make the prompt and call tokenize.-->Is the command "ex
-it"?
-	Is the command "exit"?--> No, is the command "env"?
-	Is the command "exit"?-->Yes, Call free_arg and break.
-	No, is the command "env"?--> Yes, Call env_cmd and continue.
-	No, is the command "env"?--> No, Call execmd and free_arg.
+it"?;
+	Is the command "exit"?--> No, is the command "env"?;
+	Is the command "exit"?-->Yes, Call free_arg and break.;
+	No, is the command "env"?--> Yes, Call env_cmd and continue.;
+	No, is the command "env"?--> No, Call execmd and free_arg.;
 ```
