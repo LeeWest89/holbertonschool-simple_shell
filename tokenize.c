@@ -18,7 +18,6 @@ char **tokenize(char *input, const char *delim)
 	if (c_read == -1)
 	{
 		free(input);
-		/*printf("Exiting Simphell\n");*/
 		exit(0);
 	}
 	input_copy = malloc(sizeof(char) * c_read);

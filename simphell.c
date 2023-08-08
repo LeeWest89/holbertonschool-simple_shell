@@ -24,14 +24,12 @@ int main(int argc, char **argv)
 		token_argv = tokenize(input, delim);
 		if (token_argv[0] != NULL && strcmp(token_argv[0], "exit") == 0)
 		{
-			/*printf("Exiting Simphell\n");*/
 			free_arg(token_argv);
 			break;
 		}
 		else if (token_argv[0] != NULL && strcmp(token_argv[0], "env") == 0)
 		{
 			env_cmd();
-			/*free_arg(token_argv);*/
 			continue;
 		}
 		execmd(token_argv);
