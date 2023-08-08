@@ -167,15 +167,14 @@ flowchart TD;
   B-->C[Is c_read -1?];
   C--Yes-->D[Free input];
   D-->E[Exit];
-  C--No-->F[Allocate memory for input_copy];
+  C--No-->F[Make memory for input_copy];
   F-->G[Was memory Allocated?];
   G--No-->H[perror];
   G--Yes-->I[Make Tokens from input];
   I-->J[While Token is true];
   J-->K[Added to token count];
-  K-->L[Allocate memory for Tokens];
+  K-->L[Make memory for Tokens];
   L-->M[Iterate through argv];
   M-->N[Copy Tokens to argv[i]];
-  N-->O[Free input and copy];
-  O-->P[Return argv];
+  N-->O[Free input,copy. Return argv];
 ```
