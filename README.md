@@ -175,6 +175,7 @@ flowchart TD;
   J-->K[Added to token count];
   K-->L[Make memory for Tokens];
   L-->M[Iterate through argv];
-  M-->N[Copy Tokens to argv[i]];
-  N-->O[Free input,copy. Return argv];
+  M-->N[Copy Tokens to argv];
+  N-->O[Free input,copy] 
+  O-->P[Return argv];
 ```
