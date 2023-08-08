@@ -173,10 +173,9 @@ flowchart TD;
   G--Yes-->I[Make Tokens from input];
   I-->J[While Token is true];
   J-->K[Added to token count];
-  K-->L[Move to Next Token];
-  L-->M[Allocate memory for Tokens];
-  M-->N[Iterate through argv];
-  N-->O[Copy Tokens to argv[i]];
-  O-->P[Free input and copy];
-  P-->Q[Return argv];
+  K-->L[Allocate memory for Tokens];
+  L-->M[Iterate through argv];
+  M-->N[Copy Tokens to argv[i]];
+  N-->O[Free input and copy];
+  O-->P[Return argv];
 ```
