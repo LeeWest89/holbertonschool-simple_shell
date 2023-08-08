@@ -158,3 +158,25 @@ flowchart TD;
   E--Yes-->F[Return espos];
   E--No-->G[Return NULL];
 ```
+
+#### tokenize
+
+```mermaid
+flowchart TD;
+  A[Tokenize is called]-->B[c_read set to getline];
+  B-->C[Is c_read -1?];
+  C--Yes-->D[Free input];
+  D-->E[Exit];
+  C--No-->F[Allocate memory for input_copy];
+  F-->G[Was memory Allocated?];
+  G--No-->H[perror];
+  G--Yes-->I[Make Tokens from input];
+  I-->J[While Token is true];
+  J-->K[Added to token count];
+  K-->L[Move to Next Token];
+  L-->M[Allocate memory for Tokens];
+  M-->N[Iterate through argv];
+  N-->O[Copy Tokens to argv[i]];
+  O-->P[Free input and copy];
+  P-->Q[Return argv];
+```
